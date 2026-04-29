@@ -19,7 +19,17 @@ public:
     const char* code;
     Bytecode(const char* code) {
         this->code = code;
+        // For holding numbers and performing calculations
         std::vector<int> stack;
+        // For storing all of the instructions
+        std::vector<const char*> prog;
+        
+        std::string code;
+        
+        for (const char* instruction: code) {
+            
+        }
+
 
         for (int i = 0; i < sizeof(code)/sizeof(code[0]); i++) {
             switch (code[i]) {
@@ -27,7 +37,6 @@ public:
                     // Push the number after to the stack and then skip the numbers after so that they don't get confused as instructions
                     std::cout << (int) code[i+1] << std::endl;
                     return;
-
             }
         }
     }
